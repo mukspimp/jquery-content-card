@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/jquery.contentCard.js"></script>
+<link rel="stylesheet" href="css/jquery.contentCard.css" />
+<script type="text/JavaScript">
+    $(document).ready(function() {
+        /* for left 
+                .grid-options
+                    // left: 0px; 
+                .grid-options-icons .icon 
+                    // float: right;    
+            for Right 
+                .grid-options-icons .icon
+                    //float: right;
+            for bottom 
+                .grid-options  
+                    // top: 0px;
+            for top 
+                add 
+                 .grid-options  
+                    top: 0px;   
+                    left: 0px; 
+                 .grid-options-icons .icon
+                    float: right;                 
+        */
+        $('.myContent').contentCard({
+            editor: true,
+            editorOptions: {
+                copy: true,
+                edit: true,
+                delete: true,
+                print: true
+            },
+            onEditClick: function() {                               
+                alert($(this).attr('headerText')  + ' card edit click');
+            },
+            onCopyClick: function () {                              
+                alert($(this).attr('headerText')  + ' card copy click');
+            },
+            onDeleteClick: function() {                               
+                alert($(this).attr('headerText')  + ' card delete click');
+            },
+            onPrintClick: function() {                              
+                alert($(this).attr('headerText')  + ' card print click');
+            },
+            complete : function() {                
+                console.log("Card inserted....");
+            }         
+        });
+ 
+    });
+</script>
+</head>
+<body>
+
+    <div class="content-card-row">
+        <div class="content-card-grid">
+            <!-- <div class="grid-item">                
+                <div class="grid-box rel">
+                    <img src="images/insurance.jpeg" />                
+                    <div class="abs-content">
+                    </div>
+                    <div class="grid-options">
+                        <div class="grid-options-icons">                              
+                            <div class='delete-icon'></div>                                
+                            <div class='print-icon'></div>                                                                   
+                            <div class='edit-icon'></div>                               
+                            <div class='copy-icon'></div>                                
+                        </div>
+                    </div>
+                    <div class="grid-header">
+                        <img src="images/car.png" class="grid-icon icon-a" />
+                        <div class="grid-text">
+                            <div class="grid-title">{this.props.title}</div>
+                            <div class="grid-desc">
+                                {this.props.description}
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+            </div>                 -->
+            <div class="grid-item"> 
+                <div class="myContent" headerText="Here is title" description="here is description..." iconUrl="images/car.png" bgUrl="images/insurance.jpeg"></div>     
+            </div>
+            <div class="grid-item"> 
+                <div class="myContent" headerText="Here is title" description="here is description..." iconUrl="images/car.png" bgUrl="images/insurance.jpeg"></div>     
+            </div>
+            <div class="grid-item"> 
+                <div class="myContent" headerText="Here is title111" description="here is description111..." iconUrl="images/car.png" bgUrl="images/insurance.jpeg"></div>            
+            </div>                     
+        </div>
+    </div>
+</body>
+</html>
