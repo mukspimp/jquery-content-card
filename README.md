@@ -1,1 +1,1 @@
-# jquery-content-card
+# jQuery Content Card Plugin
