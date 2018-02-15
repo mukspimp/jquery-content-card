@@ -5,6 +5,7 @@
         console.log(this.attr('headerText'));
         var defaults = {
             editor: true,
+            editorPosition: 'top',
             editorOptions: {
                 copy: true,
                 edit: true,
@@ -48,10 +49,39 @@
 
             var $editorOptionWrap = '<div class="grid-options"><div class="grid-options-icons">'+ $editorOption +'</div></div>';
             var $gridHeader = '<div class="grid-text"><div class="grid-title">'+headerText+'</div><div class="grid-desc">'+description+'</div></div>';
-            var $gridHeaderWrap = '<div class="grid-header"><img src="images/car.png" class="grid-icon icon-a" />'+ $gridHeader +'</div>';
-            var $contentBox = '<div class="grid-box rel"><img src="images/insurance.jpeg" /> '+ $editorOptionWrap +' '+ $gridHeaderWrap +'</div></div>';
+            var $gridHeaderWrap = '<div class="grid-header"><img src="'+iconUrl+'" class="grid-icon icon-a" />'+ $gridHeader +'</div>';
+            var $contentBox = '<div class="grid-box rel"><img src="'+bgUrl+'" /> '+ $editorOptionWrap +' '+ $gridHeaderWrap +'</div></div>';
 
             $(this).append($contentBox);   
+            // if(settings.editorPosition === 'left') {
+                
+            // } else if() {
+
+            // }
+            switch (settings.editorPosition) {
+                case 'left': {
+                    $(this).find('.grid-options').css('right', 'unset');
+                    $(this).find('.grid-options-icons .icon').css('float', 'none');
+                    $(this).find('.grid-options').css('left', 'unset');
+                    break;
+                }
+                case 'right': {
+                    $(this).find('.grid-options').css('left', 'unset');
+                    $(this).find('.grid-options-icons .icon').css('float', 'none');
+                    break;
+                }
+                case 'top' : {
+                    // $(this).find('.grid-options').css('left', 'unset'); 
+                    $(this).find('.grid-options').css('bottom', 'unset');
+                    break;
+                }
+                case 'bottom': {
+                    $(this).find('.grid-options').css('top', 'unset');
+                }
+                default: {
+                    break;                   
+                }
+            }
 
             $(this).find('.grid-options-icons .edit-icon').on('click', onEditClick);                                   
             function onEditClick(){

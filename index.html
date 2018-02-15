@@ -6,28 +6,10 @@
 <script type="text/javascript" src="js/jquery.contentCard.js"></script>
 <link rel="stylesheet" href="css/jquery.contentCard.css" />
 <script type="text/JavaScript">
-    $(document).ready(function() {
-        /* for left 
-                .grid-options
-                    // left: 0px; 
-                .grid-options-icons .icon 
-                    // float: right;    
-            for Right 
-                .grid-options-icons .icon
-                    //float: right;
-            for bottom 
-                .grid-options  
-                    // top: 0px;
-            for top 
-                add 
-                 .grid-options  
-                    top: 0px;   
-                    left: 0px; 
-                 .grid-options-icons .icon
-                    float: right;                 
-        */
+    $(document).ready(function() {        
         $('.myContent').contentCard({
             editor: true,
+            editorPosition: 'top',
             editorOptions: {
                 copy: true,
                 edit: true,
@@ -47,7 +29,19 @@
                 alert($(this).attr('headerText')  + ' card print click');
             },
             complete : function() {                
-                console.log("Card inserted....");
+                console.log("Card created....");
+            }         
+        });
+        
+                
+        $('.myContent1').contentCard({
+            editor: true,
+            editorPosition: 'right',
+            editorOptions: {
+                copy: true,
+                edit: false,
+                delete: false,
+                print: true
             }         
         });
  
@@ -55,41 +49,35 @@
 </script>
 </head>
 <body>
-
     <div class="content-card-row">
-        <div class="content-card-grid">
-            <!-- <div class="grid-item">                
-                <div class="grid-box rel">
-                    <img src="images/insurance.jpeg" />                
-                    <div class="abs-content">
-                    </div>
-                    <div class="grid-options">
-                        <div class="grid-options-icons">                              
-                            <div class='delete-icon'></div>                                
-                            <div class='print-icon'></div>                                                                   
-                            <div class='edit-icon'></div>                               
-                            <div class='copy-icon'></div>                                
-                        </div>
-                    </div>
-                    <div class="grid-header">
-                        <img src="images/car.png" class="grid-icon icon-a" />
-                        <div class="grid-text">
-                            <div class="grid-title">{this.props.title}</div>
-                            <div class="grid-desc">
-                                {this.props.description}
-                            </div>
-                        </div>
-                    </div>                  
-                </div>
-            </div>                 -->
+        <div class="content-card-grid">            
             <div class="grid-item"> 
-                <div class="myContent" headerText="Here is title" description="here is description..." iconUrl="images/car.png" bgUrl="images/insurance.jpeg"></div>     
+                <div class="myContent" headerText="Car insurance" description="We know lots of factors go into calculating insurance costs..." iconUrl="images/car.png" bgUrl="images/insurance.jpeg"></div>     
             </div>
             <div class="grid-item"> 
-                <div class="myContent" headerText="Here is title" description="here is description..." iconUrl="images/car.png" bgUrl="images/insurance.jpeg"></div>     
+                <div class="myContent" headerText="Self-driving vehicles are here" description="Fully self-driving vehicles can transform the way we get around..." iconUrl="images/free-delivery.png" bgUrl="images/self-drive.jpeg"></div>     
             </div>
             <div class="grid-item"> 
-                <div class="myContent" headerText="Here is title111" description="here is description111..." iconUrl="images/car.png" bgUrl="images/insurance.jpeg"></div>            
+                <div class="myContent" headerText="A cost-effective advertising" description="Many businesses are now realizing the potentials of advertising..." iconUrl="images/bicycle.png" bgUrl="images/advertise.jpeg"></div>     
+            </div>
+            <div class="grid-item"> 
+                <div class="myContent" headerText="Commerical Vehical Hiring" description="Online commercial vehicle hiring portal based on bidding system..." iconUrl="images/cargo-truck.png" bgUrl="images/com-truck.jpeg"></div>            
+            </div>                     
+        </div>
+    </div>
+    <div class="content-card-row">
+        <div class="content-card-grid">            
+            <div class="grid-item"> 
+                <div class="myContent1" headerText="Car insurance" description="We know lots of factors go into calculating insurance costs..." iconUrl="images/car.png" bgUrl="images/insurance.jpeg"></div>     
+            </div>
+            <div class="grid-item"> 
+                <div class="myContent1" headerText="Self-driving vehicles are here" description="Fully self-driving vehicles can transform the way we get around..." iconUrl="images/free-delivery.png" bgUrl="images/self-drive.jpeg"></div>     
+            </div>
+            <div class="grid-item"> 
+                <div class="myContent1" headerText="A cost-effective advertising" description="Many businesses are now realizing the potentials of advertising..." iconUrl="images/bicycle.png" bgUrl="images/advertise.jpeg"></div>     
+            </div>
+            <div class="grid-item"> 
+                <div class="myContent1" headerText="Commerical Vehical Hiring" description="Online commercial vehicle hiring portal based on bidding system..." iconUrl="images/cargo-truck.png" bgUrl="images/com-truck.jpeg"></div>            
             </div>                     
         </div>
     </div>

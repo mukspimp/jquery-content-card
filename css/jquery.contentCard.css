@@ -1,5 +1,13 @@
 
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 .content-card-row {
+    box-sizing: border-box;
+    font-family: sans-serif;
     margin-right: auto;
     margin-left: auto;
 }
@@ -131,11 +139,18 @@
     position: relative;  
 }
 
-.grid-box:hover .grid-options {
+.grid-box:hover {
     opacity: 0.7;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.87);    
     z-index: 6;
+}
+
+.grid-box:hover .grid-options {
+    opacity: 0.9;
+    color: #fff;
+    background-color: rgb(0, 0, 0);    
+    z-index: 20;
 }
 
 .grid-options-icons .icon {
